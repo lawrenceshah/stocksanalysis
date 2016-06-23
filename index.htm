@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title></title>
+		<title>Stocks Analysis App</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -11,7 +11,26 @@
 		<script type="text/javascript" src="js/main.js" defer></script>
 	</head>
 
-	<body>
-
+	<body ng-app="stocksAnalysisApp" ng-controller="mainController">
+		<div>
+			<form ng-submit="fetchHistorical()">
+				<div>Symbol: <input type="text" placeholder="TSLA" ng-model="symbol" /></div>
+				<div>From:
+					<input type="text" size="6" ng-model="fromMonth" />
+					<input type="text" size="6" ng-model="fromDay" />
+					<input type="text" size="6" ng-model="fromYear" />
+				</div>
+				<div>To:
+					<input type="text" size="6" ng-model="toMonth" />
+					<input type="text" size="6" ng-model="toDay" />
+					<input type="text" size="6" ng-model="toYear" />
+				</div>
+				<div>
+					<input type="submit" value="Fetch Histoical Data" />
+				</div>
+			</form>
+		</div>
+		<div class="graph">
+		</div>
 	</body>
 </html>

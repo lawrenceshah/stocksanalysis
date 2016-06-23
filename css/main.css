@@ -1,0 +1,73 @@
+body {
+	font-family: 'Calibri', 'Arial', sans-serif;
+}
+
+.graph {
+	border: 1px solid black;
+	height: 500px;
+	position: relative;
+	vertical-align: bottom;
+	width: 1000px;
+}
+
+.bar-container {
+	display: inline-block;
+	height: 100%;
+	position: relative;
+	vertical-align: bottom;
+}
+
+.bar-container:hover {
+	background-color: lightblue;
+}
+
+.bar {
+	left: 45%;
+	min-width: 1px;
+	position: absolute;
+	width: 10%;
+}
+
+.bar-open {
+	height: 1px;
+	left: 5%;
+	min-width: 1px;
+	position: absolute;
+	width: 40%
+}
+
+.bar-close {
+	height: 1px;
+	min-width: 1px;
+	position: absolute;
+	right: 5%;
+	width: 40%
+}
+
+.bar-container.green .bar,
+.bar-container.green .bar-open,
+.bar-container.green .bar-close {
+	background-color: green;
+}
+
+.bar-container.red .bar,
+.bar-container.red .bar-open,
+.bar-container.red .bar-close {
+	background-color: red;
+}
+
+.bar-info {
+	background-color: lightyellow;
+	border: 1px solid grey;
+	display: none;
+	left: 0;
+	padding: 8px;
+	position: absolute;
+	top: 100%;
+	white-space: nowrap;
+	z-index: 100;
+}
+
+.bar-container:hover .bar-info {
+	display: block;
+}

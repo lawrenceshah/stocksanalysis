@@ -10,23 +10,35 @@
 		<script type="text/javascript" src="js/jquery-2.1.3.min.js" defer></script>
 		<script type="text/javascript" src="js/main.js" defer></script>
 	</head>
-
+	
 	<body ng-app="stocksAnalysisApp" ng-controller="mainController">
 		<div>
 			<form ng-submit="fetchHistorical()">
 				<div>Symbol: <input type="text" placeholder="TSLA" ng-model="symbol" /></div>
 				<div>From:
-					<input type="text" size="6" ng-model="fromMonth" />
-					<input type="text" size="6" ng-model="fromDay" />
-					<input type="text" size="6" ng-model="fromYear" />
+					<select ng-model="fromMonth" ng-options="month.value as month.name for month in months">
+					</select>
+					<select ng-model="fromDay" ng-options="day for day in days">
+					</select>
+					<select ng-model="fromYear" ng-options="year for year in years">
+					</select>
 				</div>
 				<div>To:
-					<input type="text" size="6" ng-model="toMonth" />
-					<input type="text" size="6" ng-model="toDay" />
-					<input type="text" size="6" ng-model="toYear" />
+					<select ng-model="toMonth" ng-options="month.value as month.name for month in months">
+						<option value="">- Month -</option>
+					</select>
+					<select ng-model="toDay" ng-options="day for day in days">
+					</select>
+					<select ng-model="toYear" ng-options="year for year in years">
+					</select>
 				</div>
 				<div>
 					<input type="submit" value="Fetch Histoical Data" />
+				</div>
+				<div>
+					<form ng-submit="graphData()">
+						Resolution: <input type="number" ng-model="resolution" /> <input type="submit" value="Regraph Data" />
+					</form>
 				</div>
 			</form>
 		</div>

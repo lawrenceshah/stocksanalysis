@@ -1,5 +1,5 @@
 (function() {
-	angular.module('stocksAnalysisApp', [])
+	angular.module('stocksGrapherApp', [])
 	.controller('mainController', ['$scope','$http',function($scope,$http) {
 		$scope.months = [
 			{name:'January',value:1},

@@ -53,7 +53,7 @@
 					$scope.data.shift();
 					$scope.graphData();
 				} else {
-					console.log($scope.data);
+					console.log(res.data);
 					alert('Failed to fetch data.');
 				}
 			});
